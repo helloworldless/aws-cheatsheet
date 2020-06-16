@@ -11,7 +11,8 @@ Cheatsheet for all things AWS
 1. Beware of discrepancies between SDKs and documents, for example, `put` vs. `putItem`
 1. Primary Key is referred to as the `HASH`
 1. Sort key is referred to as the `RANGE`
-1. DynamoDB is schemaless, so at 
+1. DynamoDB is schemaless, so at table creation time, you only need to define the `HASH` 
+parameter and optionally the `RANGE` parameter
 
 ### Example
 
