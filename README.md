@@ -223,6 +223,24 @@ const result = await dynamo.query(params).promise();
   ```
 </details>
 
-### Example `LAMBDA` Event
+### Example `LAMBDA` Integration Request Mapping
 
-// TODO
+Uses DSL to construct even which is sent to the Lambda
+
+Where this lives: Resources > Choose Resource > Integration Request
+ > Mapping Templates > Select a Content Type
+
+```json
+#set($inputRoot = $input.path('$'))
+{
+  "operation": "put",
+  "params": {
+      "TableName" : "notes",
+      "Item" : {
+          "userId" : "$context.authorizer.claims.sub",
+          "noteId" : "$inputRoot.noteId",
+          "note" : "$inputRoot.note"
+       }
+  }
+}
+```
