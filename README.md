@@ -75,7 +75,7 @@ const result = await dynamo.query(params).promise();
 ### Example `LAMBDA_PROXY` Event
 
 <details>
-  <summary>Click to expand!</summary>
+  <summary>Click to expand</summary>
   
 
   ```json
