@@ -14,6 +14,8 @@ Cheatsheet for all things AWS
 1. DynamoDB is schemaless, so at table creation time, you only need to define the `HASH` 
 parameter and optionally the `RANGE` parameter
 
+// TODO - add notes about unique constraints across `HASH` and `RANGE`
+
 ### Example
 
 #### Create Table (Serverless Framework)
