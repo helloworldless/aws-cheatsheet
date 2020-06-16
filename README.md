@@ -16,6 +16,26 @@ parameter and optionally the `RANGE` parameter
 
 ### Example
 
+
+```yaml
+Type: AWS::DynamoDB::Table
+Properties:
+  TableName: ${self:custom.dynamoTableName}
+  AttributeDefinitions:
+    - AttributeName: userId
+      AttributeType: S
+    - AttributeName: createdAt
+      AttributeType: S
+  KeySchema:
+    - AttributeName: userId
+      KeyType: HASH
+    - AttributeName: createdAt
+      KeyType: RANGE
+  ProvisionedThroughput:
+    ReadCapacityUnits: 1
+    WriteCapacityUnits: 1
+```
+
 ```js
 const AWS = require('aws-sdk');
 AWS.config.update({ region: 'us-east-1' });
